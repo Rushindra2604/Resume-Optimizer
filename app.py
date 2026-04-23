@@ -3,9 +3,10 @@ import google.generativeai as genai
 import json
 import re
 import pdfplumber
+import os
 
 # 🔐 Configure API
-genai.configure(api_key="AIzaSyA0raNw-iahEFzb8r1jJH6auNc3C-79UgU")
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
 app = Flask(__name__)
 
@@ -115,4 +116,5 @@ def analyze():
 
 # ▶️ Run App
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
