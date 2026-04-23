@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Resume Optimizer</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 style="text-align:center;">AI Resume Optimizer</h1>
+        <p style="text-align:center; color:#666;">
+            Optimize your resume for any job using AI + smart analysis
+        </p>
+        <hr>
+
+        <input type="file" id="resumeFile" accept=".pdf">
+        <br><br>
+
+        <textarea id="resume" placeholder="Paste your resume"></textarea>
+        <textarea id="jobDesc" placeholder="Paste job description"></textarea>
+
+        <button id="analyzeBtn" onclick="analyze()">Analyze</button>
+        <p id="errorMsg" style="color:red;"></p>
+
+        <p id="loading" style="display:none; color: blue;">Analyzing...</p>
+
+        <div class="card">
+            <h3>Match Score</h3>
+        </div>
+
+        <div class="progress">
+            <div id="scoreBar"></div>
+        </div>
+
+        <p id="scoreText"></p>
+        <p id="scoreReason" style="color: gray;"></p>
+
+        <div class="card">
+            <h3>Matched Keywords</h3>
+        </div>
+        <div id="matchedKeywords"></div>
+
+        <div class="card">
+            <h3>Missing Keywords</h3>
+        </div>
+        <div id="keywords"></div>
+
+        <div class="card">
+            <h3>Suggestions</h3>
+        </div>
+        <ul id="suggestions"></ul>
+
+        <h3>Improved Resume Bullets</h3>
+        <ul id="improvedBullets"></ul>
+
+        <h3>Resume with Highlights</h3>
+        <div id="highlightedResume" style="white-space: pre-wrap; background:#f9fafb; padding:15px; border-radius:8px;">
+        </div>
+
+        <button onclick="clearAll()">Clear</button>
+    </div>
+
+    <script src="/static/script.js"></script>
+
+</body>
+
+</html>
